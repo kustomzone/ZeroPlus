@@ -1,0 +1,77 @@
+{
+ "address": "1NCRELKZ3zWRS6DijziYrfWi9dsUY8Fh8n",
+ "cloneable": true,
+ "description": "Social Site",
+ "files": {
+  "css/all.css": {
+   "sha512": "b6e6ad158ba4fdbc9035679afb9b3c5188eb7da333b8ccd232758f69bdcd918d",
+   "size": 179838
+  },
+  "data-default/users/content-default.json": {
+   "sha512": "c1642cc2922a74c3e74991f0194e2acc46dc5e003207a0028dad63c75c41a0ec",
+   "size": 672
+  },
+  "dbschema.json": {
+   "sha512": "97909faaf6c8150320a184e46f2dab1696fa9820725aa9b6d56a0fa9b54573cb",
+   "size": 1985
+  },
+  "img/edit.png": {
+   "sha512": "60ba4297e205b038bf7852ead2b88f9373cd8848408bb258dbcebb086d43f056",
+   "size": 237
+  },
+  "img/loading.gif": {
+   "sha512": "8a42b98962faea74618113166886be488c09dad10ca47fe97005edc5fb40cc00",
+   "size": 723
+  },
+  "img/missing-image.png": {
+   "sha512": "0e87104343eb6342317df5278283911272a6d34dde96e1bed3b75f00a8287124",
+   "size": 5407
+  },
+  "img/topic-chat.png": {
+   "sha512": "f41719987d5f5d797591857648c0d4cf33a11d7f1a42428a2456c28e0957c88e",
+   "size": 238
+  },
+  "img/topic-group.png": {
+   "sha512": "1f9305544e3350d62f0c76caf5202e256848206d18485e0451dc050201f86a7b",
+   "size": 310
+  },
+  "index.html": {
+   "sha512": "0affc0dd547e935f1811a418f61c55f77a5ff4ee35a115e86b5b99b96959519f",
+   "size": 15223
+  },
+  "js/all.js": {
+   "sha512": "307d93a2d301886db85b5fdb38d43c9a1c01874d5852a0958c212aaf795f68b3",
+   "size": 233460
+  }
+ },
+ "ignore": "((js|css)/(?!all.(js|css))|data/.*|.git)",
+ "includes": {
+  "data/users/content.json": {
+   "signers": [
+    "1C2JhCunGLtvyX56nQ88tcb87WnXspjWN"
+   ],
+   "signers_required": 1
+  }
+ },
+ "inner_path": "content.json",
+ "modified": 1489556857,
+ "postmessage_nonce_security": true,
+ "settings": {
+  "admin": "someone",
+  "admin_href": "http://127.0.0.1:43110/Mail.ZeroNetwork.bit/?to=someone",
+  "topic_sticky_uris": [
+   ""
+  ]
+ },
+ "sign": [
+  50381701848840447563055170014550751252653672468155854673788563000620685675886,
+  87937448678268137310948851090912172961014197279484837377937232136187460531090
+ ],
+ "signers_sign": "G3/QTkbw337kq1Q8FFSHgahTQGMZ/kvP4G1beoppwG94BEgyQ8dnD+QkR7M4oDJZvF9iyE49twHmNVK9/NIkysw=",
+ "signs": {
+  "1NCRELKZ3zWRS6DijziYrfWi9dsUY8Fh8n": "HPL+RkHcpCs7hAW4rfMxxQamLkmHfIjKnbU0cyBb28cWRtmVmW5b06ppL/O91DKW+npLXXmqAACTglSYm0E8Egw="
+ },
+ "signs_required": 1,
+ "title": "Zero+",
+ "zeronet_version": "0.5.3"
+}

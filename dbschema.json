@@ -1,0 +1,65 @@
+{
+	"db_name": "ZeroTalk",
+	"db_file": "data/users/zerotalk.db",
+	"version": 2,
+	"maps": {
+		".+/data.json": {
+			"to_table": [
+				{"node": "topic", "table": "topic"},
+				{"node": "topic_vote", "table": "topic_vote", "key_col": "topic_uri", "val_col": "vote"},
+				{"node": "comment", "table": "comment", "key_col": "topic_uri"},
+				{"node": "comment_vote", "table": "comment_vote", "key_col": "comment_uri", "val_col": "vote"}
+			],
+			"to_keyvalue": ["next_comment_id", "next_topic_id"]
+		},
+		".+/content.json": {
+			"to_keyvalue": [ "cert_user_id" ]
+		}
+	},
+	"tables": {
+		"topic": {
+			"cols": [
+				["topic_id", "INTEGER"], 
+				["title", "TEXT"],
+				["body", "TEXT"],
+				["image", "TEXT"],
+				["image_thumb", "TEXT"],
+				["parent_topic_uri", "TEXT"],
+				["added", "DATETIME"],
+				["json_id", "INTEGER REFERENCES json (json_id)"]
+			],
+			"indexes": ["CREATE UNIQUE INDEX topic_key ON topic(topic_id, json_id)"],
+			"schema_changed": 1
+		},
+		"comment": {
+			"cols": [
+				["comment_id", "INTEGER"], 
+				["body", "TEXT"],
+				["image", "TEXT"],
+				["topic_uri", "TEXT"],
+				["added", "DATETIME"],
+				["json_id", "INTEGER REFERENCES json (json_id)"]
+			],
+			"indexes": ["CREATE INDEX topic_uri ON comment(topic_uri)", "CREATE UNIQUE INDEX comment_key ON comment(json_id, comment_id)"],
+			"schema_changed": 1
+		},
+		"comment_vote": {
+			"cols": [
+				["comment_uri", "TEXT"],
+				["vote", "INTEGER"],
+				["json_id", "INTEGER REFERENCES json (json_id)"]
+			],
+			"indexes": ["CREATE UNIQUE INDEX comment_vote_key ON comment_vote(comment_uri, json_id)", "CREATE INDEX comment_vote_uri ON comment_vote(comment_uri)"],
+			"schema_changed": 1
+		},
+		"topic_vote": {
+			"cols": [
+				["topic_uri", "TEXT"],
+				["vote", "INTEGER"],
+				["json_id", "INTEGER REFERENCES json (json_id)"]
+			],
+			"indexes": ["CREATE UNIQUE INDEX topic_vote_topic_key ON topic_vote(topic_uri, json_id)", "CREATE INDEX topic_vote_uri ON topic_vote(topic_uri)"],
+			"schema_changed": 1
+		}
+	}
+}
