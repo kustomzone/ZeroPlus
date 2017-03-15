@@ -430,6 +430,8 @@ input.text:focus, textarea:focus {
 .topic .owner { font-size: 12px; color: #B0B0B0; }
 
 .topic .body {
+  margin-top: 10px;
+  margin-right: 30px;
   line-height: 1.5em;
   display: block;
   overflow: hidden;
@@ -437,6 +439,20 @@ input.text:focus, textarea:focus {
   white-space: nowrap;
 }
 .topic .body p { margin: 0px; }
+
+.topic-full {
+  border-left: 2px solid #A43207;
+  display: inline-block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s;
+     -moz-transition: opacity 0.4s;
+          transition: opacity 0.4s;
+}
+.topic-full .body { white-space: normal; margin-bottom: -15px; }
 
 .topic .link {
   font-size: 13px;
@@ -492,20 +508,6 @@ input.text:focus, textarea:focus {
 }
 .topics-loading img { opacity: 0.4; margin-right: 10px; }
 
-.topic-full {
-  border-left: 2px solid #A43207;
-  display: inline-block;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  opacity: 0;
-  -webkit-transition: opacity 0.4s;
-     -moz-transition: opacity 0.4s;
-          transition: opacity 0.4s;
-}
-.topic-full .body { white-space: normal; margin-left: 40px; }
-
 /* Messages */
 
 .comments { }
@@ -515,8 +517,8 @@ input.text:focus, textarea:focus {
   padding: 12px 20px;
   border-bottom: 1px solid #E0E0E0;
   -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  backface-visibility: hidde;
+     -moz-backface-visibility: hidden;
+          backface-visibility: hidde;
 }
 .comment .user_name { font-size: 14px; }
 .comment .added { color: #A0A0A0; }
@@ -551,7 +553,7 @@ input.text:focus, textarea:focus {
 .comment .body blockquote p { margin: 0px; color: #909090; font-size: 90%; }
 .comment .body blockquote a { color: #303030; }
 
-.comment-new { margin-bottom: 5px; }
+.comment-new { margin-top: 1px; margin-bottom: 1px; }
 .comment-new .button-submit { }
 
 .comment-nocert textarea { opacity: 0.5; pointer-events: none; }
@@ -576,8 +578,8 @@ input.text:focus, textarea:focus {
 .button.button-certselect:active {
   position: absolute;
   -webkit-transform: translateX(-50%) translateY(1px);
-  -moz-transform: translateX(-50%) translateY(1px);
-  transform: translateX(-50%) translateY(1px);
+     -moz-transform: translateX(-50%) translateY(1px);
+          transform: translateX(-50%) translateY(1px);
   top: auto;
 }
 
@@ -682,6 +684,7 @@ input.text:focus, textarea:focus {
   float: left;
   width: 0px;
   margin-top: -4px;
+  margin-left: -38px;
   padding: 8px 20px;
   padding-right: 5px;
   -webkit-transition: all 0.4s;

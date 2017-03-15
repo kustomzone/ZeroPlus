@@ -589,14 +589,14 @@ jQuery.extend( jQuery.easing,
       this.startEdit       = bind(this.startEdit, this);
       
       // todo: show more topic body content (...)
-      var elemClass = this.elem[0].className;
-      var parentId = $(this.elem).parent().get(0).id;
-      if (elemClass === 'body' && parentId.substring(0, 5) === 'topic') {
-          this.edit_button     = $("<a href='#Edit' class='editable-edit icon-edit' style='position: relative; top: 27px; left: -70px;'></a>");
-      } else { // title or comment
-          this.edit_button     = $("<a href='#Edit' class='editable-edit icon-edit'></a>");
-      }
-      
+      // var elemClass = this.elem[0].className;
+      // var parentId = $(this.elem).parent().get(0).id;
+      // if (elemClass === 'body' && parentId.substring(0,5) === 'topic') {
+      //    this.edit_button     = $("<a href='#Edit' class='editable-edit icon-edit'></a>");
+      // } else { // title or comment
+      // }
+	  
+      this.edit_button = $("<a href='#Edit' class='editable-edit icon-edit'></a>");
       this.edit_button.on("click", this.startEdit);
       this.elem.addClass("editable").before(this.edit_button);
       this.editor = null;
@@ -1380,8 +1380,7 @@ var lastid = "";
       $(".title .title-link, a.image, .comment-num", elem).attr("href", "?Topic:" + topic_uri + "/" + title_hash);
       
       // topic body only
-      $(".body", elem).attr('style', 'padding-bottom: 35px; position: relative; top: 27px; left: -70px;');
-      
+      // $(".body", elem).attr('style', 'padding-bottom: 35px; position: relative; top: 27px; left: -60px;');
       // $(".title", elem).attr('style', 'position: relative; left: -5px;');
       // $(".title a.editable-edit.icon-edit", elem).attr('style', 'position: relative; left: -5px;');
       // $("a .editable-edit .icon-edit", elem).attr('style', 'position: relative; left: 20px; top: 20px;');
@@ -1424,12 +1423,11 @@ var lastid = "";
         lastid = elem[0].id;
       }
      }
-      
       image = topic.image;
       if (type === "show") {
         $(".body", elem).html(Text.toMarked(body, {
           "sanitize": true
-        }) + '<br /><img src="' + image + '" style="display: none;">');
+        }) + '<img src="' + image + '" style="display: none;">');
       } else {
         $(".body", elem).text(body);
       }

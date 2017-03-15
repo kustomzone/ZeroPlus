@@ -11,7 +11,7 @@
  <base href="" target="_top" id="base">
  <script>
  setTimeout(function() {
- 	base.href = document.location.href.replace("/media", "").replace("index.html", "").replace(/([&?])wrapper=False/, "$1").replace(/&$/, "").replace(/[&?]wrapper_nonce=[A-Za-z0-9]+/, "") // Fix urls
+     base.href = document.location.href.replace("/media", "").replace("index.html", "").replace(/([&?])wrapper=False/, "$1").replace(/&$/, "").replace(/[&?]wrapper_nonce=[A-Za-z0-9]+/, "") // Fix urls
  }, 100) // 100ms later, to workaround double js download in chrome
  </script>
 </head>
@@ -67,11 +67,10 @@
   
   <h2 class="title">
     <input type="file" name="image" id="image_file" class="text">
-	<input type="hidden" id="filedata">
-	<p id="desc"></p>
-	<img id="image_preview">
+    <input type="hidden" id="filedata">
+    <p id="desc"></p>
+    <img id="image_preview">
   </h2>
-  
   <div class="info"><a class="user_name user_name-my certselect" href="#Change+user" title='Change user'>user_name</a> &#9473; <span class="added">new topic</span></div>
   <a href="#Add+new+topic" class="button button-submit">Submit Post</a>
   <div style="clear: both"></div>
@@ -86,19 +85,19 @@
   <div class="topic template">
    <div class="dot">&bullet;</div>
    <!-- a href="#" class="image nolink"><div class="icon icon-topic-chat"></div></a -->
-   <span id="topic-info" style="width: 100%">
-    <h2 class="title floatL"><a href="#" class="title-link">Title</a></h2>
-    <div class="info floatR">
+   <div class="info floatR">
      <a href="#" class="comment-num"></a>
      <span class="added">added</span> &#9473; by <span class="user_name">user_name</span>
-	  <a class="score" href="#Upvote">
+      <a class="score" href="#Upvote">
       <span class="score-inactive"> <span class="icon-up">^</span><span class="score-num">1</span> </span>
       <span class="score-active"> <span class="icon-up">^</span><span class="score-num">2</span> </span>
      </a>
     </div>
-   </span>
-   <div class="body">Body</div>
-   <a href="#" class="link"><div class="icon icon-link"></div> <span class="link-url"></span></a>
+    <h2 class="title"><a href="#" class="title-link">Title</a></h2>
+    <!-- span id="topic-info"></span -->
+	<div class="body">Body</div><br>
+   
+   <!-- a href="#" class="link" style="border: 3px dashed red;"><div class="icon icon-link"></div> <span class="link-url"></span></a -->
   </div>
   <!-- EOF Template: Topic main -->
 
@@ -112,24 +111,29 @@
 
 <!-- Page: Topic -->
 <div class="center topics-full">
- <h1 class="topic-title">
-  <span class='parent-link'><a href='?Main'>Main</a> &rsaquo;</span>
+  
+  <h1 class="topic-title">
+  <!-- span class='parent-link'><a href='?Main'>Main</a> &rsaquo;</span>
   <span class='parent-link'><a href='?Main'>ZeroNet news</a> &rsaquo; </span>
-  <span class="parent-link">How did you find ZeroNet?</span>
- </h1>
- <div class="topic topic-full">
-  <!-- a href="#" class="image nolink"><div class="icon icon-topic-chat"></div></a -->
-  <a href="#Follow" class="feed-follow feed-follow-show"><span class='text-follow'>Follow in Newsfeed</span><span class='text-following'>Following</span><div class="icon-feed"></div></a>
-  <h2 class="title"><a href="#" class="title-link">Title</a></h2>
-  <div class="body">Body</div>
-  <div class="info">
+  <span class="parent-link">How did you find ZeroNet?</span -->
+  </h1>
+  <div class="topic topic-full">
+   <!-- a href="#" class="image nolink"><div class="icon icon-topic-chat"></div></a -->
+   <a href="#Follow" class="feed-follow feed-follow-show">
+    <span class='text-follow'>Follow in Newsfeed</span>
+    <span class='text-following'>Following</span>
+    <div class="icon-feed"></div>
+   </a>
+   <h2 class="title"><a href="#" class="title-link">Title</a></h2>
+   <div class="body">Body</div><br>
+   <div class="info">
     <a class="score" href="#Upvote">
-     <span class="score-inactive"> <span class="icon-up">^</span><span class="score-num">?</span> </span>
-     <span class="score-active"> <span class="icon-up">^</span><span class="score-num">0</span> </span>
+      <span class="score-inactive"> <span class="icon-up">^</span><span class="score-num">?</span> </span>
+      <span class="score-active"> <span class="icon-up">^</span><span class="score-num">0</span> </span>
     </a>
-   <span class="user_name">username</span> posted <span class="added">added</span>
+    <span class="user_name">username</span> posted <span class="added">added</span>
   </div>
- </div>
+  </div>
 
  <!-- New comment -->
  <div class="comment comment-new">
@@ -137,7 +141,11 @@
   <div class="body">
    <a class="button button-submit button-certselect certselect" href="#Change+user"><div class='icon-profile'></div>Sign in as...</a>
    <textarea id="comment_body"></textarea>
-   <h2 class="title"><input type="file" id="comment_image_file" class="text"><input type="hidden" id="commentfiledata"></h2>
+   <h2 class="title">
+    <input type="file" id="comment_image_file" class="text">
+	<input type="hidden" id="commentfiledata">
+	<img id="image_preview">
+   </h2>
    <a href="#Submit+comment" class="button button-submit button-submit-form">Submit comment</a>
    <div style='float: right; margin-top: -6px; position: relative; text-align: right'>
     <div class="user-size user-size-used">Used space: 22k/100k</div>
@@ -186,19 +194,19 @@ var _createClass = (function () { function defineProperties(target, props) { for
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var hasBlobConstructor = typeof Blob !== 'undefined' && (function () {
-	try {
-		return Boolean(new Blob());
-	} catch (e) {
-		return false;
-	}
+    try {
+        return Boolean(new Blob());
+    } catch (e) {
+        return false;
+    }
 })();
 
 var hasArrayBufferViewSupport = hasBlobConstructor && typeof Uint8Array !== 'undefined' && (function () {
-	try {
-		return new Blob([new Uint8Array(100)]).size === 100;
-	} catch (e) {
-		return false;
-	}
+    try {
+        return new Blob([new Uint8Array(100)]).size === 100;
+    } catch (e) {
+        return false;
+    }
 })();
 
 var hasToBlobSupport = typeof HTMLCanvasElement !== "undefined" ? HTMLCanvasElement.prototype.toBlob : false;
@@ -209,64 +217,64 @@ var hasReaderSupport = typeof FileReader !== 'undefined' || typeof URL !== 'unde
 
 document.addEventListener("DOMContentLoaded", function() {
 
-  filedataHiddenElement	= document.querySelector("#filedata");
+  filedataHiddenElement    = document.querySelector("#filedata");
   commentfiledataHiddenElement = document.querySelector("#commentfiledata"); 
 
   function handleFileSelect(evt) {
-	var files = evt.target.files; // FileList object
-	console.log(files);
-	
-	// var width = files[0];
-	// var height = files[0].height;
-	// var isTooLarge = false;
-	// alert("width = " + width);
-	
-	// Loop through the FileList and render image files as thumbnails.
-	for (var i = 0, f; f = files[i]; i++) {
+    var files = evt.target.files; // FileList object
+    console.log(files);
+    
+    // var width = files[0];
+    // var height = files[0].height;
+    // var isTooLarge = false;
+    // alert("width = " + width);
+    
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
 
-	  // Only process image files.
-	  if (!f.type.match('image.*')) {
-		alert("only image files allowed!"); continue;
-	  } else {
-	    // image_(type) applied to image_preview as className
-		var ext = "image_" + f.type.split("/")[1];
-		// see ImageTools()_createClass below for gif non-handling of preview image
-	  }
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        alert("only image files allowed!"); continue;
+      } else {
+        // image_(type) applied to image_preview as className
+        var ext = "image_" + f.type.split("/")[1];
+        // see ImageTools()_createClass below for gif non-handling of preview image
+      }
 
-	  var reader = new FileReader();
+      var reader = new FileReader();
 
-	  // Closure to capture the file information.
-	  reader.onload = (function(theFile) {
-	   return function(e) {	
-		filedataHiddenElement.value	= e.target.result;
-		commentfiledataHiddenElement.value = e.target.result;
-		
-		/*
-		  var img = $('<img id="new_image">'); // create img
-		  img.attr('src', e.target.result);
-		  img.attr('style', 'width: 100px; height: 100px;');
-		  img.appendTo('#image_preview');
-		*/
-	   };
-	  })(f);
-	  
-		ImageTools.resize(f, {
-			width: 100, // max width
-			height: 100 // max height
-		}, function(blob, didItResize) {
-		  // document.getElementById('image_preview').src = window.URL.createObjectURL(blob);
-		  blobToDataURL(blob, function(dataurl) {
-		    document.getElementById('image_preview').src = dataurl;
-			// handle different image types
-			$('#image_preview').attr("class", ext);
-		  });		  
-		  // reader.readAsArrayBuffer(blob));
-		  // you can also now upload this blob using an XHR.
-		});
-		
-	  // Read in the image file as a data URL.
-	  reader.readAsDataURL(f);
-	}
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+       return function(e) {    
+        filedataHiddenElement.value    = e.target.result;
+        commentfiledataHiddenElement.value = e.target.result;
+        
+        /*
+          var img = $('<img id="new_image">'); // create img
+          img.attr('src', e.target.result);
+          img.attr('style', 'width: 100px; height: 100px;');
+          img.appendTo('#image_preview');
+        */
+       };
+      })(f);
+      
+        ImageTools.resize(f, {
+            width: 100, // max width
+            height: 100 // max height
+        }, function(blob, didItResize) {
+          // document.getElementById('image_preview').src = window.URL.createObjectURL(blob);
+          blobToDataURL(blob, function(dataurl) {
+            document.getElementById('image_preview').src = dataurl;
+            // handle different image types
+            $('#image_preview').attr("class", ext);
+          });          
+          // reader.readAsArrayBuffer(blob));
+          // you can also now upload this blob using an XHR.
+        });
+        
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+    }
   }
   
   document.getElementById('image_file').addEventListener('change', handleFileSelect, false);
@@ -274,145 +282,145 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 var ImageTools = (function () {
-	function ImageTools() {
-		_classCallCheck(this, ImageTools);
-	}
+    function ImageTools() {
+        _classCallCheck(this, ImageTools);
+    }
 
-	_createClass(ImageTools, null, [{
-		key: 'resize',
-		value: function resize(file, maxDimensions, callback) {
-			if (typeof maxDimensions === 'function') {
-				callback = maxDimensions;
-				maxDimensions = {
-					width: 100,
-					height: 100
-				};
-			}
+    _createClass(ImageTools, null, [{
+        key: 'resize',
+        value: function resize(file, maxDimensions, callback) {
+            if (typeof maxDimensions === 'function') {
+                callback = maxDimensions;
+                maxDimensions = {
+                    width: 100,
+                    height: 100
+                };
+            }
 
-			// var maxWidth = maxDimensions.width;
-			// var maxHeight = maxDimensions.height;
+            // var maxWidth = maxDimensions.width;
+            // var maxHeight = maxDimensions.height;
 
-			if (!ImageTools.isSupported() || !file.type.match('image.*')) {
-				callback(file, false);
-				return false;
-			}
+            if (!ImageTools.isSupported() || !file.type.match('image.*')) {
+                callback(file, false);
+                return false;
+            }
 
-			if (file.type.match('image\/gif')) { // Not attempting, could be an animated gif
-				callback(file, false);
-				// TODO: use https://github.com/antimatter15/whammy to convert gif to webm
-				return false;
-			}
+            if (file.type.match('image\/gif')) { // Not attempting, could be an animated gif
+                callback(file, false);
+                // TODO: use https://github.com/antimatter15/whammy to convert gif to webm
+                return false;
+            }
 
-			var image = document.createElement('img');
+            var image = document.createElement('img');
 
-			image.onload = function (imgEvt) {
-				var width = image.width;
-				var height = image.height;
-				var maxWidth = 100;
-				var maxHeight = 100;
-				var isTooLarge = false;
-				document.getElementById('desc').innerHTML = "Downscaled from ( w:" + width + " h:" + height + " ) TO ( w:" + maxWidth + " h:" + maxHeight + " )";
-				
-				// alert("width = " + width + " height = " + height);
-				/*
-				if (width >= height && width > maxDimensions.width) {
-					// width is the largest dimension, and it's too big.
-					height *= maxDimensions.width / width;
-					width = maxDimensions.width;
-					isTooLarge = true;
-				} else if (height > maxDimensions.height) {
-					// either width wasn't over-size or height is the largest dimension
-					// and the height is over-size
-					width *= maxDimensions.height / height;
-					height = maxDimensions.height;
-					isTooLarge = true;
-				}
-				if (!isTooLarge) { // early exit; no need to resize
-					callback(file, false);
-					return;
-				}
-				*/
+            image.onload = function (imgEvt) {
+                var width = image.width;
+                var height = image.height;
+                var maxWidth = 100;
+                var maxHeight = 100;
+                var isTooLarge = false;
+                document.getElementById('desc').innerHTML = "Downscaled from ( w:" + width + " h:" + height + " ) TO ( w:" + maxWidth + " h:" + maxHeight + " )";
+                
+                // alert("width = " + width + " height = " + height);
+                /*
+                if (width >= height && width > maxDimensions.width) {
+                    // width is the largest dimension, and it's too big.
+                    height *= maxDimensions.width / width;
+                    width = maxDimensions.width;
+                    isTooLarge = true;
+                } else if (height > maxDimensions.height) {
+                    // either width wasn't over-size or height is the largest dimension
+                    // and the height is over-size
+                    width *= maxDimensions.height / height;
+                    height = maxDimensions.height;
+                    isTooLarge = true;
+                }
+                if (!isTooLarge) { // early exit; no need to resize
+                    callback(file, false);
+                    return;
+                }
+                */
 
-				var canvas = document.createElement('canvas');
-				canvas.width = maxWidth;
-				canvas.height = maxHeight;
+                var canvas = document.createElement('canvas');
+                canvas.width = maxWidth;
+                canvas.height = maxHeight;
 
-				var ctx = canvas.getContext('2d');
-				ctx.drawImage(image, 0, 0, maxWidth, maxHeight);
+                var ctx = canvas.getContext('2d');
+                ctx.drawImage(image, 0, 0, maxWidth, maxHeight);
 
-				if (hasToBlobSupport) {
-					canvas.toBlob(function (blob) {
-						callback(blob, true);
-					}, file.type);
-				} else {
-					var blob = ImageTools._toBlob(canvas, file.type);
-					callback(blob, true);
-				}
-			};
-			ImageTools._loadImage(image, file);
+                if (hasToBlobSupport) {
+                    canvas.toBlob(function (blob) {
+                        callback(blob, true);
+                    }, file.type);
+                } else {
+                    var blob = ImageTools._toBlob(canvas, file.type);
+                    callback(blob, true);
+                }
+            };
+            ImageTools._loadImage(image, file);
 
-			return true;
-		}
-	}, {
-		key: '_toBlob',
-		value: function _toBlob(canvas, type) {
-			var dataURI = canvas.toDataURL(type);
-			var dataURIParts = dataURI.split(',');
-			var byteString = undefined;
-			if (dataURIParts[0].indexOf('base64') >= 0) {
-				// Convert base64 to raw binary data held in a string:
-				byteString = atob(dataURIParts[1]);
-			} else {
-				// Convert base64/URLEncoded data component to raw binary data:
-				byteString = decodeURIComponent(dataURIParts[1]);
-			}
-			var arrayBuffer = new ArrayBuffer(byteString.length);
-			var intArray = new Uint8Array(arrayBuffer);
+            return true;
+        }
+    }, {
+        key: '_toBlob',
+        value: function _toBlob(canvas, type) {
+            var dataURI = canvas.toDataURL(type);
+            var dataURIParts = dataURI.split(',');
+            var byteString = undefined;
+            if (dataURIParts[0].indexOf('base64') >= 0) {
+                // Convert base64 to raw binary data held in a string:
+                byteString = atob(dataURIParts[1]);
+            } else {
+                // Convert base64/URLEncoded data component to raw binary data:
+                byteString = decodeURIComponent(dataURIParts[1]);
+            }
+            var arrayBuffer = new ArrayBuffer(byteString.length);
+            var intArray = new Uint8Array(arrayBuffer);
 
-			for (var i = 0; i < byteString.length; i += 1) {
-				intArray[i] = byteString.charCodeAt(i);
-			}
+            for (var i = 0; i < byteString.length; i += 1) {
+                intArray[i] = byteString.charCodeAt(i);
+            }
 
-			var mimeString = dataURIParts[0].split(':')[1].split(';')[0];
-			var blob = null;
+            var mimeString = dataURIParts[0].split(':')[1].split(';')[0];
+            var blob = null;
 
-			if (hasBlobConstructor) {
-				blob = new Blob([hasArrayBufferViewSupport ? intArray : arrayBuffer], { type: mimeString });
-			} else {
-				var bb = new BlobBuilder();
-				bb.append(arrayBuffer);
-				blob = bb.getBlob(mimeString);
-			}
+            if (hasBlobConstructor) {
+                blob = new Blob([hasArrayBufferViewSupport ? intArray : arrayBuffer], { type: mimeString });
+            } else {
+                var bb = new BlobBuilder();
+                bb.append(arrayBuffer);
+                blob = bb.getBlob(mimeString);
+            }
 
-			return blob;
-		}
-	}, {
-		key: '_loadImage',
-		value: function _loadImage(image, file, callback) {
-			if (typeof URL === 'undefined') {
-				var reader = new FileReader();
-				reader.onload = function (evt) {
-					image.src = evt.target.result;
-					if (callback) {
-						callback();
-					}
-				};
-				reader.readAsDataURL(file);
-			} else {
-				image.src = URL.createObjectURL(file);
-				if (callback) {
-					callback();
-				}
-			}
-		}
-	}, {
-		key: 'isSupported',
-		value: function isSupported() {
-			return typeof HTMLCanvasElement !== 'undefined' && hasBlobSupport && hasReaderSupport;
-		}
-	}]);
+            return blob;
+        }
+    }, {
+        key: '_loadImage',
+        value: function _loadImage(image, file, callback) {
+            if (typeof URL === 'undefined') {
+                var reader = new FileReader();
+                reader.onload = function (evt) {
+                    image.src = evt.target.result;
+                    if (callback) {
+                        callback();
+                    }
+                };
+                reader.readAsDataURL(file);
+            } else {
+                image.src = URL.createObjectURL(file);
+                if (callback) {
+                    callback();
+                }
+            }
+        }
+    }, {
+        key: 'isSupported',
+        value: function isSupported() {
+            return typeof HTMLCanvasElement !== 'undefined' && hasBlobSupport && hasReaderSupport;
+        }
+    }]);
 
-	return ImageTools;
+    return ImageTools;
 })();
 
 //**dataURL to blob**
