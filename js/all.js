@@ -1183,6 +1183,18 @@ jQuery.extend( jQuery.easing,
 
 /* ---- data/1C2JhCunGLtvyX56nQ88tcb87WnXspjWN/js/TopicList.coffee ---- */
 
+$(window).scroll(function(){
+	if ($(this).scrollTop() > 900) {
+		$('.scrollToTop').fadeIn();
+	} else {
+		$('.scrollToTop').fadeOut();
+	}
+});
+$('.scrollToTop').click(function(){
+	$('html, body').animate({scrollTop : 0},900);
+	return false;
+});
+	
 /*
 Array.prototype.contains = function(obj) {
     var i = this.length;
@@ -1231,13 +1243,17 @@ var lastid = "";
         Page.local_storage["topic." + parent_topic_id + "_" + parent_topic_user_address + ".visited"] = Time.timestamp();
         Page.cmd("wrapperSetLocalStorage", Page.local_storage);
       } else {
-        $(".topics-title").html("Zero+");
+		// create banner ad
+		$('<img />').attr({ src:'/1NCRELKZ3zWRS6DijziYrfWi9dsUY8Fh8n/img/ZeroPlus.jpg', width:'360', height:'60' }).appendTo($('<a />').attr({ href:'?Home' }).appendTo($('.topics-title')));
+		// $(".topics-title").html("Zero+");
       }
       this.loadTopics("noanim");
       $(".topic-new-link").on("click", (function(_this) {
         return function() {
           $(".topic-new").fancySlideDown();
           $(".topic-new-link").slideUp();
+		  $(".topic-new").attr("style", "margin-left: 40px; margin-right: 40px;");
+		  $(".topics-title").attr("style", "opacity: 0; -webkit-transition: opacity 0.6s; -moz-transition: opacity 0.6s; transition: opacity 0.6s;");
           return false;
         };
       })(this));
@@ -1350,7 +1366,7 @@ var lastid = "";
             if (Page.site_info.bad_files) {
               $(".message-big").text("Initial sync in progress...");
             } else {
-              $(".message-big").text("Welcome to your own forum! :)");
+              $(".message-big").text("Welcome! :)");
               $(".topic-new-link").trigger("click");
             }
             $(".message-big").css("display", "block").cssLater("opacity", 1);
@@ -1549,9 +1565,7 @@ var lastid = "";
       })(this));
       return false;
     };
-
     return TopicList;
-
   })(Class);
 
   window.TopicList = new TopicList();
@@ -1909,6 +1923,8 @@ var lastid = "";
       last_cert_user_id = $(".user_name-my").text();
       console.log(Page);
       console.log(Page.site_info);
+	  // alert(Page.site_info.peers);
+	  $(".peers").html("shares: " + Page.site_info.peers);
       if ($(".comment-new .user_name").text() !== Page.site_info.cert_user_id || type === "updaterules") {
         if (Page.site_info.cert_user_id) {
           $(".comment-new").removeClass("comment-nocert");

@@ -4,8 +4,8 @@
  "description": "Social Site",
  "files": {
   "css/all.css": {
-   "sha512": "b6e6ad158ba4fdbc9035679afb9b3c5188eb7da333b8ccd232758f69bdcd918d",
-   "size": 179838
+   "sha512": "a5b24076552c62353d79942d5a7f544547bb05fe21c5584615ab07e31793b2c2",
+   "size": 180535
   },
   "data-default/users/content-default.json": {
    "sha512": "c1642cc2922a74c3e74991f0194e2acc46dc5e003207a0028dad63c75c41a0ec",
@@ -14,6 +14,14 @@
   "dbschema.json": {
    "sha512": "97909faaf6c8150320a184e46f2dab1696fa9820725aa9b6d56a0fa9b54573cb",
    "size": 1985
+  },
+  "img/ZeroPlus.jpg": {
+   "sha512": "baac8fea51334e16cbbff3c04d7f24a229c7ddc567110e1542e70bb7c522a006",
+   "size": 17264
+  },
+  "img/arrow-up.png": {
+   "sha512": "d5b48dfd8e5eca1c4376111d6636e8ba51535d6c6e7da6dd22c03f48e593ffda",
+   "size": 948
   },
   "img/edit.png": {
    "sha512": "60ba4297e205b038bf7852ead2b88f9373cd8848408bb258dbcebb086d43f056",
@@ -36,12 +44,12 @@
    "size": 310
   },
   "index.html": {
-   "sha512": "0affc0dd547e935f1811a418f61c55f77a5ff4ee35a115e86b5b99b96959519f",
-   "size": 15223
+   "sha512": "7e85e8e94c91b887429cc85e1dc7c652c92c43b0ac3184bc9ced891daba95b1c",
+   "size": 17037
   },
   "js/all.js": {
-   "sha512": "307d93a2d301886db85b5fdb38d43c9a1c01874d5852a0958c212aaf795f68b3",
-   "size": 233460
+   "sha512": "c7b736a52571dd067f30f95dda5ce87e26b311bab5a765f2f7b3f6bbcfe0860e",
+   "size": 234136
   }
  },
  "ignore": "((js|css)/(?!all.(js|css))|data/.*|.git)",
@@ -54,7 +62,7 @@
   }
  },
  "inner_path": "content.json",
- "modified": 1489556857,
+ "modified": 1489623168,
  "postmessage_nonce_security": true,
  "settings": {
   "admin": "someone",
@@ -64,12 +72,12 @@
   ]
  },
  "sign": [
-  50381701848840447563055170014550751252653672468155854673788563000620685675886,
-  87937448678268137310948851090912172961014197279484837377937232136187460531090
+  20479296855868572768247836688508975439867609486178330415618153503343801945736,
+  99327921916441254356323346280708862090075714458646289621140733861594244877824
  ],
  "signers_sign": "G3/QTkbw337kq1Q8FFSHgahTQGMZ/kvP4G1beoppwG94BEgyQ8dnD+QkR7M4oDJZvF9iyE49twHmNVK9/NIkysw=",
  "signs": {
-  "1NCRELKZ3zWRS6DijziYrfWi9dsUY8Fh8n": "HPL+RkHcpCs7hAW4rfMxxQamLkmHfIjKnbU0cyBb28cWRtmVmW5b06ppL/O91DKW+npLXXmqAACTglSYm0E8Egw="
+  "1NCRELKZ3zWRS6DijziYrfWi9dsUY8Fh8n": "G0NB8oQ+EXVOR4EPa2U8XZZ7CJRtKeE8eR3R9Qh+5RxZlChByIbmdRy2cQP3tp6Wmrc0M2HWZ/scCNcYYqgWsiY="
  },
  "signs_required": 1,
  "title": "Zero+",

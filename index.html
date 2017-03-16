@@ -41,6 +41,9 @@
 </div>
 <!-- EOF editbar -->
 
+<!-- Scroller -->
+<a href="#" class="scrollToTop"></a>
+
 <!-- Head -->
 <div class="head">
  <a class='logo nolink' href="?Home">Zer0<br>Plus</a>
@@ -52,18 +55,19 @@
 <!-- Page: Main -->
 <div class="center topics-list">
 <a href="#New+topic" class="topic-new-link nolink"> + New Post </a>
- <h1 class="topics-title">Zero+</h1>
+ <h1 class="topics-title"></h1>
  <a href="#Follow" class="feed-follow feed-follow-list">
   <span class='text-follow'>Follow in Newsfeed</span>
   <span class='text-following'>Following</span>
   <div class="icon-feed"></div>
  </a>
-
+ <div id="peers"><span class="peers">shares: _</span></div>
+ 
  <!-- New Topic -->
  <div class="topic topic-new" style="display: none">
   <!-- a href="#" class="image nolink"><div class="icon icon-topic-chat"></div></a -->
-  <h2 class="title"><input type="text" id="topic_title" class="text" placeholder="Post title"></h2>
-  <div class="body"><textarea id="topic_body" placeholder="Post text"></textarea></div>
+  <h2 class="title"><input type="text" id="topic_title" class="text" placeholder="Title"></h2>
+  <div class="body"><textarea id="topic_body" placeholder="Text"></textarea></div>
   
   <h2 class="title">
     <input type="file" name="image" id="image_file" class="text">
@@ -97,7 +101,8 @@
     <!-- span id="topic-info"></span -->
 	<div class="body">Body</div><br>
    
-   <!-- a href="#" class="link" style="border: 3px dashed red;"><div class="icon icon-link"></div> <span class="link-url"></span></a -->
+   <!-- zite link -->
+   <a href="#" class="link"><div class="icon icon-link"></div> <span class="link-url"></span></a>
   </div>
   <!-- EOF Template: Topic main -->
 
