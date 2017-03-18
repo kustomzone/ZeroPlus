@@ -28,7 +28,7 @@ Sample
 ======
 
 <div align="center">
-  <img src="img/Zplus-screeny.jpg"><br><br>
+  <img src="https://github.com/kustomzone/ZeroPlus/img/Zplus-screeny.jpg"><br><br>
 </div>
 
 
