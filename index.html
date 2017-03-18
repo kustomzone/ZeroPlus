@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 
+<!-- source: https://github.com/kustomzone/ZeroPlus -->
+<!-- hosted: http://localhost:43110/1NCRELKZ3zWRS6DijziYrfWi9dsUY8Fh8n -->
+
 <html>
 <head>
  <title>Zero+</title>
  <meta charset="utf-8">
  <meta http-equiv="content-type" content="text/html; charset=utf-8">
  
- <link rel="stylesheet" type="text/css" href="css/all.css">
+ <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+ <link rel="stylesheet"    type="text/css"     href="css/all.css">
+ 
+ <script type="text/javascript" src="js/jquery.min.js">  </script>
+ <script type="text/javascript" src="js/mustache.js">    </script>
  
  <base href="" target="_top" id="base">
  <script>
  setTimeout(function() {
      base.href = document.location.href.replace("/media", "").replace("index.html", "").replace(/([&?])wrapper=False/, "$1").replace(/&$/, "").replace(/[&?]wrapper_nonce=[A-Za-z0-9]+/, "") // Fix urls
- }, 100) // 100ms later, to workaround double js download in chrome
+ }, 100); // 100ms later, to workaround double js download in chrome
  </script>
 </head>
 <body>
 
-<!-- editbar -->
+<!-- Editbar -->
 <div class="editbg"></div>
 <div class="editbar bottombar">
  <ul class="markdown-help">
@@ -39,18 +46,41 @@
  </ul>
  <a href="#Markdown+help" class="icon-help">?</a> Editing: <span class="object">Post:21.body</span> <a href="#Save" class="button save">Save</a> <a href="#Delete" class="button button-delete button-outline delete">Delete</a> <a href="#Cancel" class="cancel">Cancel</a>
 </div>
-<!-- EOF editbar -->
+<!-- /Editbar -->
 
 <!-- Scroller -->
 <a href="#" class="scrollToTop"></a>
 
 <!-- Head -->
+<br>
 <div class="head">
  <a class='logo nolink' href="?Home">Zer0<br>Plus</a>
 </div>
-<!-- EOF Head -->
 
 <div class="message-big">Initial sync in progress...</div>
+
+<!-- Sidebar -->
+<!--
+<div id="categories">
+	<div id="featured" class="container">
+		<div class="title">
+			<h2>流行</h2>
+		</div>
+		<ul class="list">
+		  {{ #posts }} 
+			  <li class="lastposts">
+			    <i class="icon {{ post_cat }}"></i>&nbsp;
+				<a href="#post-{{ post_id }}" id="open_post" data-key="{{ post_id }}">{{ post_title }}</a>
+			  </li>
+		  {{ /posts }}		
+		</ul>
+		<div class="showmore">
+			<a href="#more">More</a>
+		</div>
+	</div> 
+</div>
+-->
+<!-- /Sidebar -->
 
 <!-- Page: Main -->
 <div class="center topics-list">
@@ -61,7 +91,7 @@
   <span class='text-following'>Following</span>
   <div class="icon-feed"></div>
  </a>
- <div id="peers"><span class="peers">shares: _</span></div>
+ <div id="peers"><span class="peers">shares</span></div>
  
  <!-- New Topic -->
  <div class="topic topic-new" style="display: none">
@@ -79,7 +109,7 @@
   <a href="#Add+new+topic" class="button button-submit">Submit Post</a>
   <div style="clear: both"></div>
  </div>
- <!-- EOF New Topic -->
+ <!-- /New Topic -->
 
  <div class="topics-loading"><img src="img/loading.gif"/>Loading...</div>
 
@@ -104,15 +134,14 @@
    <!-- zite link -->
    <a href="#" class="link"><div class="icon icon-link"></div> <span class="link-url"></span></a>
   </div>
-  <!-- EOF Template: Topic main -->
+  <!-- /Template: Topic main -->
 
  </div>
 
  <a href="#More" class="topics-more">More topics</a>
 
 </div>
-<!-- EOF Page: Main -->
-
+<!-- /Page: Main -->
 
 <!-- Page: Topic -->
 <div class="center topics-full">
@@ -160,8 +189,9 @@
    <div style="clear: both"></div>
   </div>
  </div>
+
 <!-- Comments -->
- <div class="comments center">
+ <div class="comments">
 
   <!-- Template: Comment -->
   <div class="comment template">
@@ -177,21 +207,29 @@
    </div>
    <div class="body">Body</div>
   </div>
-  <!-- EOF Template: Comment -->
+  <!-- /Template: Comment -->
  </div>
  <a href="#More" class="comments-more">More comments</a>
 
 </div>
-<!-- EOF Page: Topic -->
+<!-- /Page: Topic -->
 
 <!-- Template: menu -->
 <div class="menu template">
  <a href="#" class="menu-item template">Template</a>
 </div>
-<!-- EOF Template: menu -->
+<!-- /Template: menu -->
 
-<script type="text/javascript" src="js/all.js" async></script>
+<!-- Main: Loader -->
+<main class="clearfix">
+<script type="text/javascript" src="js/all.js"></script>
+</main>
+<!-- /Main: Loader -->
 
+<!-- Construction -->
+<div id="construction"></div>
+
+<!-- Image Scripts -->
 <script type="text/javascript">
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -448,6 +486,7 @@ function blobToDataURL(blob, callback) {
 });
 
 </script>
+<!-- /Image Scripts -->
 
 <script>
 $(".head .more a").each( function(i, elem) {
