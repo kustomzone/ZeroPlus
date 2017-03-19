@@ -3,20 +3,18 @@
 <div id="sidebar">
 	<div id="featured" class="container">
 		<div class="title">
-			<h2>Featured</h2>
+			<h2>流行</h2>
 		</div>
+		<!-- Sidebar: Featured -->
 		<ul class="list">
 		  {{ #topic }}
 			  <span class="showtopics">
 				 <a href="?Topic:{{ topic_id }}" id="open_topic" data-key="{{ topic_id }}">{{ title }}</a>
 			     <div id="topic{{ topic_id }}"></div>
 				 <script>
-				  // ?Topic:21_1EZTWytasXcKdiUFnN4KHqAfvg1nwkTkKv/
-				  // var topic_address = TopicShow.queryTopic(topic_id, json);
-				  // alert(topic_address[0]);
 				  var thumb = "{{ image_thumb }}";
 				  thumb = decodeString(thumb); // image_thumb (blob) is getting encoded. bug (text/blob?)
-				  if (thumb.substring(0, 4) === "data") {
+				  if (thumb.substring(0, 4) === "data" && !($("#topic" + {{ topic_id }} ).children('#new_image').length)) {
 					var img = $("<img id='new_image'>"); // create img
 					img.attr("src", thumb);
 					img.attr("style", "position: relative; left: 11px; width: 100px; height: 100px; border: 1px solid #302010;");
@@ -34,6 +32,7 @@
 			  </span>
 		  {{ /topic }}			
 		</ul>
+		<!-- /Sidebar: Featured -->
 		<div class="showmore">
 			<a href="#more">More</a>
 		</div>
