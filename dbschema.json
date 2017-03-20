@@ -8,9 +8,10 @@
 				{"node": "topic", "table": "topic"},
 				{"node": "topic_vote", "table": "topic_vote", "key_col": "topic_uri", "val_col": "vote"},
 				{"node": "comment", "table": "comment", "key_col": "topic_uri"},
-				{"node": "comment_vote", "table": "comment_vote", "key_col": "comment_uri", "val_col": "vote"}
+				{"node": "comment_vote", "table": "comment_vote", "key_col": "comment_uri", "val_col": "vote"},
+				{"node": "avatar", "table": "avatar"}
 			],
-			"to_keyvalue": ["next_comment_id", "next_topic_id"]
+			"to_keyvalue": ["next_comment_id", "next_topic_id", "next_avatar_id"]
 		},
 		".+/content.json": {
 			"to_keyvalue": [ "cert_user_id" ]
@@ -59,6 +60,17 @@
 				["json_id", "INTEGER REFERENCES json (json_id)"]
 			],
 			"indexes": ["CREATE UNIQUE INDEX topic_vote_topic_key ON topic_vote(topic_uri, json_id)", "CREATE INDEX topic_vote_uri ON topic_vote(topic_uri)"],
+			"schema_changed": 1
+		},
+		"avatar": {
+			"cols": [
+				["avatar_id", "INTEGER"], 
+				["avatar_image", "TEXT"],
+				["avatar_owner", "TEXT"],
+				["avatar_added", "DATETIME"],
+				["json_id", "INTEGER REFERENCES json (json_id)"]
+			],
+			"indexes": ["CREATE UNIQUE INDEX avatar_key ON avatar(avatar_id, json_id)"],
 			"schema_changed": 1
 		}
 	}

@@ -4,8 +4,8 @@
  "description": "Social Site",
  "files": {
   "css/all.css": {
-   "sha512": "093114bb2a0c606b4a1db1f1bd4334436a578904c6cea2daa8fe44743df492de",
-   "size": 185870
+   "sha512": "782cb5a94a88cdd44d56792f1ef65cbe528f8c0ebf630b045216b48ec7af98ea",
+   "size": 186081
   },
   "css/spectrum.css": {
    "sha512": "3ef9d82a44510da1c8bc9c0bc5df9835c4e30d48f18da08347639aeda1e01c43",
@@ -16,8 +16,8 @@
    "size": 672
   },
   "dbschema.json": {
-   "sha512": "97909faaf6c8150320a184e46f2dab1696fa9820725aa9b6d56a0fa9b54573cb",
-   "size": 1985
+   "sha512": "7ceb1db7eedb8bdad78d49a295f6bc1e3048374ef3532c241771c6b4eea1596b",
+   "size": 2366
   },
   "img/ZeroPlus.jpg": {
    "sha512": "baac8fea51334e16cbbff3c04d7f24a229c7ddc567110e1542e70bb7c522a006",
@@ -96,12 +96,12 @@
    "size": 924
   },
   "index.html": {
-   "sha512": "125c82fb4d1f436540c07d7855ab098e0d501dc1bdd678dd62164fb7483b076b",
-   "size": 9985
+   "sha512": "bbf6d51af6c7c6cff64fdf3629250adb77cd2e57da03b5503555973db854226c",
+   "size": 9983
   },
   "js/all.js": {
-   "sha512": "2b3434e140ec4a22e1d59c5457ae4b73203e7ec2deabc288ea9c1475e9eba519",
-   "size": 195193
+   "sha512": "68ba97cf91f5463e0b054becfe3b76009600dfc641bbba1bdf3040b32887d12e",
+   "size": 197348
   },
   "js/img.js": {
    "sha512": "0061fdea240a2f8a152970a02eb4e6c43d88b01197e40d172161b6554784f667",
@@ -142,7 +142,7 @@
   }
  },
  "inner_path": "content.json",
- "modified": 1489953900,
+ "modified": 1490029550,
  "postmessage_nonce_security": true,
  "settings": {
   "admin": "bot",
@@ -152,12 +152,12 @@
   ]
  },
  "sign": [
-  52438165926609402591710917293625857151543400890764678196946360236682824855446,
-  51613892951225173898163242380949368774830308244633487445747717017323095045410
+  50399350804047477680070352734093010137182730845688161285189569484401620558100,
+  2542483567581693639987477775700724289484728726843752684440495824901364503449
  ],
  "signers_sign": "G3/QTkbw337kq1Q8FFSHgahTQGMZ/kvP4G1beoppwG94BEgyQ8dnD+QkR7M4oDJZvF9iyE49twHmNVK9/NIkysw=",
  "signs": {
-  "1NCRELKZ3zWRS6DijziYrfWi9dsUY8Fh8n": "G7Tltgr+Boi5wB94q8/ZOPDsbfk1nGRbTzam9TFtdvfmKkg4t2CqIR1cuvRwJHEOLq1vEHmD4Mfd9we1zpAXUlw="
+  "1NCRELKZ3zWRS6DijziYrfWi9dsUY8Fh8n": "GwiPYCYj8GHYF1ECa8WIfNo942Lw6ASEo4r653phG4CHCUmI3h2zaZ++G+fOJZWJBpHpyfg/aw4VCWsgFgyzkdM="
  },
  "signs_required": 1,
  "title": "Zer\u2a01",

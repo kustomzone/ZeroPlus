@@ -69,12 +69,12 @@ $("#full").spectrum({
     var elem;
     elem = this;
     elem.css({
-      "opacity": 0,
-      "margin-bottom": 0,
-      "margin-top": 0,
+      "opacity":        0,
+      "margin-bottom":  0,
+      "margin-top":     0,
       "padding-bottom": 0,
-      "padding-top": 0,
-      "display": "none",
+      "padding-top":    0,
+      "display":   "none",
       "transform": "scale(0.8)"
     });
     setTimeout((function() {
@@ -86,13 +86,13 @@ $("#full").spectrum({
         "display": ""
       }).cssLater("transition", "all 0.3s ease-out", 20);
       elem.cssLater({
-        "height": height,
-        "opacity": 1,
-        "margin-bottom": "",
-        "margin-top": "",
-        "padding-bottom": "",
-        "padding-top": "",
-        "transform": "scale(1)"
+        "height":       height,
+        "opacity":           1,
+        "margin-bottom":    "",
+        "margin-top":       "",
+        "padding-bottom":   "",
+        "padding-top":      "",
+        "transform":        "scale(1)"
       }, null, 40);
       return elem.one(transitionEnd, function() {
         return elem.css("transition", "").css("transform", "");
@@ -1163,6 +1163,7 @@ var lastid = "";
 		}
 		// $(".topics-title").html("Zer\u2a01");
       }
+	  // new topic
       this.loadTopics("noanim");
       $(".topic-new-link").on("click", (function(_this) {
         return function() {
@@ -1173,15 +1174,25 @@ var lastid = "";
           return false;
         };
       })(this));
+	  // save topic
       $(".topic-new .button-submit").on("click", (function(_this) {
         return function() {
           _this.submitCreateTopic();
           return false;
         };
       })(this));
-	  //
+	  
+	  // edit profile
 	  $(".edit-profile").on("click", (function(_this) {
-        return function() {
+		member = Page.site_info.cert_user_id;
+		query = "SELECT * FROM avatar WHERE avatar_owner = '" + member + "' ORDER BY avatar_added ASC LIMIT 1"; // latest avatar
+		ZeroAPI.cmd("dbQuery", [query], (function(avatar_data) {
+			if (avatar_data[0]) { // load current user avatar (if any)
+				$("#avatar_preview").attr("src", avatar_data[0].avatar_image);
+			}
+		}));
+        
+		return function() {
 		  $(".profile-edit").fancySlideDown();
 		  $(".topic-new").slideUp();
           $(".topic-new-link").slideUp();
@@ -1190,7 +1201,16 @@ var lastid = "";
           return false;
         };
       })(this));
-	  //
+	  
+	  // save profile
+      $(".profile-edit .button-submit").on("click", (function(_this) {
+        return function() {
+          _this.submitUpdateProfile();
+          return false;
+        };
+      })(this));
+	  
+	  // view more
       $(".topics-more").on("click", (function(_this) {
         return function() {
           _this.list_all = true;
@@ -1392,7 +1412,18 @@ var lastid = "";
         }
       }
       $(".user_name", elem).text(topic.topic_creator_user_name.replace(/@.*/, "")).attr("title", topic.topic_creator_user_name + ": " + topic.topic_creator_address);
-      if (User.my_topic_votes[topic_uri]) {
+      // load OP's avatar
+	  member = topic.topic_creator_user_name;
+	  // alert(member + " _ " + elem);
+	  query = "SELECT * FROM avatar WHERE avatar_owner = '" + member + "' ORDER BY avatar_added ASC LIMIT 1"; // latest avatar
+	  ZeroAPI.cmd("dbQuery", [query], (function(avatar_data) {
+	    if (avatar_data[0]) { // load current user avatar (if any)
+		  $(".user_avatar", elem).attr("src", avatar_data[0].avatar_image);
+	    } else {
+		  $(".user_avatar", elem).attr("style", "display: none;");
+		}
+	  }));
+	  if (User.my_topic_votes[topic_uri]) {
         $(".score-inactive .score-num", elem).text(topic.votes - 1);
         $(".score-active .score-num", elem).text(topic.votes);
         $(".score", elem).addClass("active");
@@ -1416,7 +1447,49 @@ var lastid = "";
         return $(".body", elem).attr("data-editable", "body").data("content", topic.body);
       }
     };
-
+	
+	// save profile (avatar only so far)
+	TopicList.prototype.submitUpdateProfile = function() {
+	  var avatar_image, avatar_file;
+	  if (!Page.site_info.cert_user_id) {
+        Page.cmd("wrapperNotification", ["info", "Please, choose your account before creating a topic."]);
+        return false;
+      }
+	  avatar_image = $(".profile-edit #avatar_file_data").val();
+	  avatar_file  = $('#avatar_preview').attr('src');
+	  //<input type="file" name="avatar" id="avatar_file" class="text"><input type="hidden" id="avatar_file_data">
+	  $(".profile-edit .button-submit").addClass("loading");
+	  return User.getData((function(_this) {
+        return function(data) {
+          var avatar;
+		  avatar = {
+			"avatar_id":    data.next_avatar_id,
+			"avatar_image": avatar_image,
+			"avatar_owner": Page.site_info.cert_user_id,
+            "avatar_added": Time.timestamp()
+		  }
+		  data.avatar.push(avatar);
+		  data.next_avatar_id += 1;
+          return User.publishData(data, function(res) {
+			$(".profile-edit .button-submit").removeClass("loading");
+            $(".profile-edit").slideUp();
+            $(".topic-new-link").slideDown();
+            // setTimeout((function() {
+            //  return _this.loadAvatars();
+            // }), 600);
+            // $(".profile-edit #avatar_file_data").val("");
+            return $(".profile-edit #avatar_file").val(""); // clear
+          });
+        };
+      })(this));
+    };
+	
+	TopicList.prototype.loadAvatars = function() {
+		// alert("loading avatars..");
+		// TODO.. show all avatars
+	}
+	
+	// save topic
     TopicList.prototype.submitCreateTopic = function() {
       var title, body, image_file, image_thumb;
       if (!Page.site_info.cert_user_id) {
@@ -1434,12 +1507,6 @@ var lastid = "";
       if (!title) {
         return $(".topic-new #topic_title").focus();
       }
-	  
-	  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	  /////////////////////////////////////////////////////                    /////////////////////////////////////////////////
-	  ///////////////////////////////////////////////////// UNDER CONSTRUCTION /////////////////////////////////////////////////
-	  /////////////////////////////////////////////////////                    /////////////////////////////////////////////////
-	  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	  
       $(".topic-new .button-submit").addClass("loading");
       return User.getData((function(_this) {
@@ -1916,6 +1983,7 @@ var lastid = "";
             data = JSON.parse(data);
           } else {
             data = {
+			  "next_avatar_id": 1,
               "next_topic_id": 1,
 			  "topic_uri": "?Topic:1_",
               "topic": [],

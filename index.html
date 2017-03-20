@@ -100,8 +100,6 @@
  <a class='logo nolink' href="?Home">Zer0<br>Plus</a>
 </div>
 
-<div class="message-big">Initial sync in progress...</div>
-
 <!-- Page: Main -->
 <div class="center topics-list">
 <a href="#New+topic" class="topic-new-link nolink"> + New Post </a>
@@ -126,8 +124,8 @@
     <img id="image_preview">
   </h2>
   <div class="info"><a class="user_name user_name-my certselect" href="#Change+user" title='Change user'>user_name</a> &#9473; <span class="added">new topic</span></div>
-  <a href="#Submit+post" id="#submit-post" class="button button-submit"> Submit Post </a><!-- Add+new+topic -->
-  <div style="clear: both"></div>
+  <a href="#Submit+post" id="submit-post" class="button button-submit"> Submit Post </a>
+  <!-- div style="clear: both"></div -->
  </div>
  <!-- /New Topic -->
  
@@ -140,9 +138,7 @@
    <img id="avatar_preview">
    <input type="file" name="avatar" id="avatar_file" class="text">
    <input type="hidden" id="avatar_file_data">
-   <!-- Under Construction -->
-   <a href="#Save+profile" id="#save-profile" class="button button-submit"><div id="construction"></div> Save Profile (pending)</a>
-   <!-- Under Construction -->
+   <a href="#Save+profile" id="save-profile" class="button button-submit">Save Avatar</a>
    <!-- div style="clear: both"></div -->
    
    <!-- Color Pallette Selector -->
@@ -152,10 +148,11 @@
  </div>
  <!-- /Profile Edit -->
 
+ <!-- main loader -->
  <div class="topics-loading"><img src="img/loading.gif"/>Loading...</div>
+ <div class="message-big">Initial sync in progress...</div>
 
  <div class="topics">
-
   <!-- Template: Topic -->
   <div class="topic template">
    <div class="dot">&bullet;</div>
@@ -165,8 +162,9 @@
      <span class="added">added</span> &#9473; by <span class="user_name">user_name</span>
       <a class="score" href="#Upvote">
       <span class="score-inactive"> <span class="icon-up">^</span><span class="score-num">1</span> </span>
-      <span class="score-active"> <span class="icon-up">^</span><span class="score-num">2</span> </span>
+        <span class="score-active"> <span class="icon-up">^</span><span class="score-num">2</span> </span>
      </a>
+	 <img class="user_avatar">
     </div>
     <h2 class="title"><a href="#" class="title-link">Title</a></h2>
     <!-- span id="topic-info"></span -->
@@ -266,6 +264,9 @@
 <script type="text/javascript" src="js/all.js"></script>
 </main>
 <!-- /Main: Loader -->
+
+<!-- Dev -->
+<div id="construction" style="display: none;"></div>
 
 <!-- Image Handler -->
 <script type="text/javascript" src="js/img.js"></script>
