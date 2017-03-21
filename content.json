@@ -4,8 +4,8 @@
  "description": "Social Site",
  "files": {
   "css/all.css": {
-   "sha512": "782cb5a94a88cdd44d56792f1ef65cbe528f8c0ebf630b045216b48ec7af98ea",
-   "size": 186081
+   "sha512": "8865b78d1ad7f8c0c067aa6bd70574b83e673a381646f36233740dcbf0f5a671",
+   "size": 186174
   },
   "css/spectrum.css": {
    "sha512": "3ef9d82a44510da1c8bc9c0bc5df9835c4e30d48f18da08347639aeda1e01c43",
@@ -16,7 +16,7 @@
    "size": 672
   },
   "dbschema.json": {
-   "sha512": "7ceb1db7eedb8bdad78d49a295f6bc1e3048374ef3532c241771c6b4eea1596b",
+   "sha512": "5578e31f5a6c1c69284f52af8ea281462314ec53410ec31a754f4653a34d046f",
    "size": 2366
   },
   "img/ZeroPlus.jpg": {
@@ -83,6 +83,10 @@
    "sha512": "99f817148996ce03b8a3a8a5a7029fb91d01ca384a1265a8bd41a513289bbf1e",
    "size": 4919
   },
+  "img/speech-bubble.jpg": {
+   "sha512": "7e53b20b7e89d995743937767afffa078371b4793aedb594b2630f8682628fcd",
+   "size": 823
+  },
   "img/topic-chat.png": {
    "sha512": "f41719987d5f5d797591857648c0d4cf33a11d7f1a42428a2456c28e0957c88e",
    "size": 238
@@ -96,12 +100,12 @@
    "size": 924
   },
   "index.html": {
-   "sha512": "bbf6d51af6c7c6cff64fdf3629250adb77cd2e57da03b5503555973db854226c",
-   "size": 9983
+   "sha512": "0ae2df59ffc81dda448998381736eb3a05e88aa492c1eb02181ec432e95cf46f",
+   "size": 9991
   },
   "js/all.js": {
-   "sha512": "68ba97cf91f5463e0b054becfe3b76009600dfc641bbba1bdf3040b32887d12e",
-   "size": 197348
+   "sha512": "4554742286c8255b168450869afabc1fe30b0d62720240c7ecfe19f5b48bada2",
+   "size": 198548
   },
   "js/img.js": {
    "sha512": "0061fdea240a2f8a152970a02eb4e6c43d88b01197e40d172161b6554784f667",
@@ -142,7 +146,7 @@
   }
  },
  "inner_path": "content.json",
- "modified": 1490029550,
+ "modified": 1490081955,
  "postmessage_nonce_security": true,
  "settings": {
   "admin": "bot",
@@ -152,12 +156,12 @@
   ]
  },
  "sign": [
-  50399350804047477680070352734093010137182730845688161285189569484401620558100,
-  2542483567581693639987477775700724289484728726843752684440495824901364503449
+  42644011203126732459168135179539817786994339382039552934751620211706847125232,
+  8045876061808098858762265996515043662585079556263859990813158443095531379337
  ],
  "signers_sign": "G3/QTkbw337kq1Q8FFSHgahTQGMZ/kvP4G1beoppwG94BEgyQ8dnD+QkR7M4oDJZvF9iyE49twHmNVK9/NIkysw=",
  "signs": {
-  "1NCRELKZ3zWRS6DijziYrfWi9dsUY8Fh8n": "GwiPYCYj8GHYF1ECa8WIfNo942Lw6ASEo4r653phG4CHCUmI3h2zaZ++G+fOJZWJBpHpyfg/aw4VCWsgFgyzkdM="
+  "1NCRELKZ3zWRS6DijziYrfWi9dsUY8Fh8n": "HAkvIi2yRJbLGNduBK8qeDwt966QBFVZoTa6kkKCta1eZzz1FREO37wRObCzE5uZYvYGqHEk2PqzvkcvkI9iCwA="
  },
  "signs_required": 1,
  "title": "Zer\u2a01",

@@ -11,7 +11,7 @@
 				{"node": "comment_vote", "table": "comment_vote", "key_col": "comment_uri", "val_col": "vote"},
 				{"node": "avatar", "table": "avatar"}
 			],
-			"to_keyvalue": ["next_comment_id", "next_topic_id", "next_avatar_id"]
+			"to_keyvalue": ["next_avatar_id", "next_comment_id", "next_topic_id"]
 		},
 		".+/content.json": {
 			"to_keyvalue": [ "cert_user_id" ]

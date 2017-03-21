@@ -1401,6 +1401,12 @@ input.text:focus, textarea:focus {
   height: 16px;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAIVBMVEUAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmYs5FxxAAAAC3RSTlMAgBFwYExAMHgoCDJmUTYAAAA3SURBVAjXY8APGGEMQZgAjCEoKBwEEQCCAoiIh6AQVM1kMaguJhGYOSJQjexiUMbiAChDCclCAOHqBBdHpwQTAAAAAElFTkSuQmCC);
 }
+.icon-speech-bubble {
+  width: 16px;
+ height: 16px;
+ opacity: 0.5;
+ text-decoration: none;
+}
 
 /* Fonts */
 
