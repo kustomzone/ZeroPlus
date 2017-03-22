@@ -4,8 +4,8 @@
  "description": "Social Site",
  "files": {
   "css/all.css": {
-   "sha512": "8865b78d1ad7f8c0c067aa6bd70574b83e673a381646f36233740dcbf0f5a671",
-   "size": 186174
+   "sha512": "237f1f640ce1f9ee5207f667d47a781c27624642bdabdc5af85c5ebae16d10d2",
+   "size": 186611
   },
   "css/spectrum.css": {
    "sha512": "3ef9d82a44510da1c8bc9c0bc5df9835c4e30d48f18da08347639aeda1e01c43",
@@ -100,12 +100,12 @@
    "size": 924
   },
   "index.html": {
-   "sha512": "0ae2df59ffc81dda448998381736eb3a05e88aa492c1eb02181ec432e95cf46f",
-   "size": 9991
+   "sha512": "ea082330d76e2a29735c776e2e0197ea409ce98ff46a5365a306cec86f3b211e",
+   "size": 10278
   },
   "js/all.js": {
-   "sha512": "4554742286c8255b168450869afabc1fe30b0d62720240c7ecfe19f5b48bada2",
-   "size": 198548
+   "sha512": "b834a16b23438229afd858e1fa8507212505838e48ca55b7db89a959ffe3991b",
+   "size": 201237
   },
   "js/img.js": {
    "sha512": "0061fdea240a2f8a152970a02eb4e6c43d88b01197e40d172161b6554784f667",
@@ -128,8 +128,8 @@
    "size": 80437
   },
   "pages/all.html": {
-   "sha512": "7ffb6827a949eb0f0f1b948c9fcb629085e07edab53b5140b8c59df21de1679d",
-   "size": 1588
+   "sha512": "ecfa0b667bbdd1aa5cc1fd4dd3d558e584a22015d9af6f99cba5981b0a1f7515",
+   "size": 1500
   },
   "pages/edit-profile.html": {
    "sha512": "2fd39cf2e5832295ac5d58c2ff0fa1ed4f2104dcc6d5887134789be54c70a229",
@@ -146,7 +146,7 @@
   }
  },
  "inner_path": "content.json",
- "modified": 1490081955,
+ "modified": 1490141490,
  "postmessage_nonce_security": true,
  "settings": {
   "admin": "bot",
@@ -156,12 +156,12 @@
   ]
  },
  "sign": [
-  42644011203126732459168135179539817786994339382039552934751620211706847125232,
-  8045876061808098858762265996515043662585079556263859990813158443095531379337
+  108541373338826716439295699065526095460791784852109358047667071078279376916393,
+  18731420165322102953245561459963509678812129375938769330006778774287458271568
  ],
  "signers_sign": "G3/QTkbw337kq1Q8FFSHgahTQGMZ/kvP4G1beoppwG94BEgyQ8dnD+QkR7M4oDJZvF9iyE49twHmNVK9/NIkysw=",
  "signs": {
-  "1NCRELKZ3zWRS6DijziYrfWi9dsUY8Fh8n": "HAkvIi2yRJbLGNduBK8qeDwt966QBFVZoTa6kkKCta1eZzz1FREO37wRObCzE5uZYvYGqHEk2PqzvkcvkI9iCwA="
+  "1NCRELKZ3zWRS6DijziYrfWi9dsUY8Fh8n": "G40IKtW5skWg7pNHpMP+WSTIeO5yDuwi/h1Q/x+VpZOgqoNRXLgmDET2PeVytrEbMY3iRRSvAgwCdHMkAXrVrFE="
  },
  "signs_required": 1,
  "title": "Zer\u2a01",

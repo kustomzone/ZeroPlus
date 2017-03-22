@@ -14,9 +14,10 @@
  <link rel="stylesheet"    type="text/css"     href="css/all.css">
  <link rel="stylesheet"    type="text/css"     href="css/spectrum.css">
  
- <script type="text/javascript" src="js/jquery.min.js">  </script>
- <script type="text/javascript" src="js/mustache.js">    </script>
- <script type="text/javascript" src='js/spectrum.js'>    </script>
+ <script type="text/javascript" src="js/jquery.min.js"> </script>
+ <!-- script type="text/javascript" src="jquery-ui.js"> </script -->
+ <script type="text/javascript" src="js/mustache.js">   </script>
+ <script type="text/javascript" src='js/spectrum.js'>   </script>
  
  <base href="" target="_top" id="base">
  <script>
@@ -112,18 +113,18 @@
   <span class='text-following'>Following</span>
   <div class="icon-feed"></div>
  </a>
- <div id="peers"><span class="peers">shares</span></div>
+ <div id="peers" class="peers">shares</span></div>
  
  <!-- New Topic -->
  <div class="topic topic-new" style="display: none">
   <!-- a href="#" class="image nolink"><div class="icon icon-topic-chat"></div></a -->
   <h2 class="title"><input type="text" id="topic_title" class="text" placeholder="Title"></h2>
   <div class="body"><textarea id="topic_body" placeholder="Text"></textarea></div>
-  
   <h2 class="title">
     <input type="file" name="image" id="image_file" class="text">
     <input type="hidden" id="image_file_data">
     <p id="desc"></p>
+	<a href="" id="close" class="button button-submit"> X</a>
     <img id="image_preview">
   </h2>
   <div class="info"><a class="user_name user_name-my certselect" href="#Change+user" title='Change user'>user_name</a> &#9473; <span class="added">new topic</span></div>
@@ -142,6 +143,8 @@
    <input type="file" name="avatar" id="avatar_file" class="text">
    <input type="hidden" id="avatar_file_data">
    <a href="#Save+profile" id="save-profile" class="button button-submit">Save Avatar</a>
+   <a href="#Save+colors"  id="save-colors"  class="button button-submit">Save Colors</a>
+   <a href=""              id="close"        class="button button-submit"> X</a>
    <!-- div style="clear: both"></div -->
    
    <!-- Color Pallette Selector -->

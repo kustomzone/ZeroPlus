@@ -72,11 +72,11 @@ a.nolink:active { border-bottom: none; }
 #peers {
   position: relative;
   top: 50px;
-  right: -130px;
+  right: 55px;
   float: right;
   width: 50px;
   height: 20px;
-  opacity: 0.15;
+  opacity: 0.2;
   white-space: nowrap;
 }
 
@@ -108,38 +108,37 @@ main {
   overflow: hidden;
 }
 
-/* Sidebar */
-
 #construction {
   width: 48px;
   height: 28px;
   background: url(../img/construction-icon.png) no-repeat center center transparent;
   opacity: 1;
 }
+
+/* Sidebar */
+
 #sidebar {
   position: absolute;
-  right: 12px;
+  right: 24px;
   top: 100px;
   padding: 10px;
-  width: 250px;
-  max-width: 250px;
-  opacity: 0.75;
+  width: 122px;
+  padding: 7px;
+  float: right;
+  min-height: 2050px;
+  background-color: #E0E0D0;
+  border: 1px solid #B0A090;
+  border-radius: 8px;
+  opacity: 0.85;
 }
-#featured {
-    padding: 7px;
-    float: right;
-	min-height: 160px;
-	background-color: #E0E0D0;
-    border: 1px solid #B0A090;
-	border-radius: 8px;
-}
-#featured .title h2{
+#sidebar .title h2{
   text-align: center;
   width: 110px;
   -webkit-border-radius: 6px 6px 0px 0px;
      -moz-border-radius: 6px 6px 0px 0px;
           border-radius: 6px 6px 0px 0px;
 }
+
 .container {
   margin-bottom: 15px;
   position: relative;
@@ -162,7 +161,9 @@ main {
   padding-bottom: 3px;
   border-bottom: 1px solid #C0C0B0;
 }
-.showtopics a { }
+.showtopics a {
+  margin-left: 10px;
+}
 
 .showmore {
   position: relative;
@@ -198,11 +199,18 @@ input.text, textarea {
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
-textarea { overflow-y: auto }
+
 input.text:focus, textarea:focus {
-  border-color: #5FC0EA;
   outline: none;
+  border-color: #76A6C6;
   background-color: #F0F0F0;
+}
+input.text {
+  width: 40%;
+}
+textarea {
+  width: 95%;
+  overflow-y: auto;
 }
 
 /* Button */
@@ -1071,7 +1079,7 @@ input.text:focus, textarea:focus {
   z-index: 20;
 }
 .login:hover {
-	opacity: 0.9;
+  opacity: 0.9;
 }
 .login-now {
   text-shadow: 0 1px 0 black;
@@ -1128,13 +1136,13 @@ input.text:focus, textarea:focus {
   background: #A0A090;
   border-radius: 10px;
   border: 1px solid #503010;
-  opacity: 0.65;
+  opacity: 0.77;
 }
 
 .profile-edit {
   position: relative;
   top: -45px;
-  width: 70%;
+  width: 65%;
   padding: 15px;
   border: 1px solid #B0A070;
   border-radius: 15px;
@@ -1149,22 +1157,47 @@ input.text:focus, textarea:focus {
   font-size: 20px;
   margin-left: 10px;
 }
-.profile-edit .button {
+.profile-edit #save-profile {
   position: relative;
   float: right;
   right: -200px;
+  top: -20px;
   opacity: 0.65;
 }
+
+.profile-edit #save-colors {
+  position: relative;
+  float: right;
+  right: -307px;
+  top: 100px;
+  opacity: 0.25;
+}
+
 .profile-edit #avatar_file {
  position: relative;
  top: -112px;
  left: 185px;
 }
 
+.profile-edit #close, .topic-new #close {
+  position: relative;
+  float: right;
+  right: -4px;
+  top: -222px;
+  height: 22px;
+  color: #F06040;
+  background-color: #F0F0F0;
+  font-weight: heavy;
+  border-radius: 4px;
+  opacity: 0.65;
+}
+
 .usermenu {
   position: absolute;
+  top: -8px;
+  right: -3px;
   z-index: 111;
-  width: 120px;
+  width: 134px;
   height: 33px;
   border: 1px solid #606050;
   background: url(../img/bgnavbar.gif) repeat-x top left;
@@ -1200,8 +1233,8 @@ input.text:focus, textarea:focus {
   background: url(../img/bgnavitem.gif) no-repeat top right;
 }
 .monitor {
-	position: relative;
-	border-radius: 5px 0 0 5px;
+  position: relative;
+  border-radius: 5px 0 0 5px;
 }
 .options {
   position: relative;
